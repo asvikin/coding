@@ -1,3 +1,5 @@
+
+
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -17,14 +19,12 @@ public class Prb1 {
 		// TODO Auto-generated method stub
 		HashSet<Integer> rem=new HashSet<>();
 		for(int x:num) {
-			if(x<k) {
-			if(rem.contains(x)) {
+			if(rem.contains(k-x)) {
 				return true;
 			}
 			else {
-				rem.add(k-x);
+				rem.add(x);
 			}
-		}
 		}
 		return false;
 	}
