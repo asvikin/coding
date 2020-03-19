@@ -1,29 +1,28 @@
-import java.util.*;
-import java.util.stream.Stream;
+  import java.util.*;
+  import java.util.stream.Stream;
 
 
-public class Prb1 {
+  public class Prb1 {
 
- public static void main(String[] args) {
-  Scanner in = new Scanner(System.in);
-  int k = Integer.parseInt( in .nextLine());
-  int numbers[] = Arrays.asList( in .nextLine().split(" ")).stream().mapToInt(Integer::parseInt).toArray();
-  System.out.println(doTwonumAdd(numbers, k)); in .close();
+   public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    int k = Integer.parseInt( in .nextLine());
+    int numbers[] = Arrays.asList( in .nextLine().split(" ")).stream().mapToInt(Integer::parseInt).toArray();
+    System.out.println(doTwonumAdd(numbers, k)); in .close();
 
- }
-
- private static boolean doTwonumAdd(int num[], int k) {
-  HashSet < Integer > rem = new HashSet < > ();
-  for (int x: num) {
-   if (x < k) {
-    if (rem.contains(x)) {
-     return true;
-    } else {
-     rem.add(k - x);
-    }
    }
-  }
-  return false;
- }
 
-}
+   private static boolean doTwonumAdd(int num[], int k) {
+    // TODO Auto-generated method stub
+    HashSet < Integer > rem = new HashSet < > ();
+    for (int x: num) {
+     if (rem.contains(k - x)) {
+      return true;
+     } else {
+      rem.add(x);
+     }
+    }
+    return false;
+   }
+
+  }
