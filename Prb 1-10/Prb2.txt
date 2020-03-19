@@ -1,0 +1,27 @@
+import java.util.*;
+import java.util.stream.Stream;
+
+
+public class Prb2 {
+
+ public static void main(String[] args) {
+  Scanner in = new Scanner(System.in);
+  int numbers[] = Arrays.asList( in .nextLine().split(" ")).stream().mapToInt(Integer::parseInt).toArray();
+  int result[] = getArrayProduct(numbers);
+  for (int i = 0; i < result.length; i++) {
+   System.out.print(result[i] + " ");
+  } in .close();
+
+ }
+
+ private static int[] getArrayProduct(int num[]) {
+  // TODO Auto-generated method stub
+  int product = 1;
+  int ans[] = new int[num.length];
+  for (int item: num) product *= item;
+  for (int i = 0; i < num.length; i++) ans[i] = product / num[i];
+  return ans;
+
+ }
+
+}
